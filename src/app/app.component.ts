@@ -1,10 +1,21 @@
 import { Component } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { PizzaStore } from './componentStores/pizza.store';
+
+
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  providers: [PizzaStore]
 })
 export class AppComponent {
-  title = 'ngrx-tut';
+
+  constructor(
+    private store: Store
+  ) {}
+
+  ngOnInit() {
+
+  }
 }
